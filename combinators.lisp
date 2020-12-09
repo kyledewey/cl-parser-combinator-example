@@ -74,10 +74,10 @@
     `(funcall ,kind ,first (parser* ,kind ,(car remaining) ,@(cdr remaining)))))
 
 (defmacro or-parser* (first &rest remaining)
-  `(parser* ,#'or-parser ,first ,@remaining))
+  `(parser* #'or-parser ,first ,@remaining))
 
 (defmacro and-parser* (first &rest remaining)
-  `(parser* ,#'and-parser ,first ,@remaining))
+  `(parser* #'and-parser ,first ,@remaining))
 	       
 (defun make-sentence (np vp)
   (list 'sentence np vp))
